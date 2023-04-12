@@ -1,0 +1,12 @@
+12:41:34 **** Incremental Build of configuration Debug_FLASH for project lpi2c_master_HDIB002 ****
+make -j8 all 
+Executing target #24 lpi2c_master_HDIB002.siz
+Invoking: Standard S32DS Print Size
+arm-none-eabi-size --format=berkeley  lpi2c_master_HDIB002.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12704	   2304	   3168	  18176	   4700	lpi2c_master_HDIB002.elf
+Finished building: lpi2c_master_HDIB002.siz
+ 
+
+12:41:34 Build Finished (took 444ms)
+
