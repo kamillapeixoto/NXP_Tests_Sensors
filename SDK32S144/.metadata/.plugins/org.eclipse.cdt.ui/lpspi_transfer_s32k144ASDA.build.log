@@ -1,0 +1,14 @@
+11:33:49 **** Incremental Build of configuration Debug_RAM for project lpspi_transfer_s32k144ASDA ****
+make -j8 all 
+Building file: ../Sources/main.c
+Executing target #2 ../Sources/main.c
+Invoking: Standard S32DS C Compiler
+arm-none-eabi-gcc "@Sources/main.args" -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c:33:17: fatal error: Cpu.h: No such file or directory
+ #include "Cpu.h"
+                 ^
+compilation terminated.
+make: *** [Sources/subdir.mk:35: Sources/main.o] Error 1
+
+11:33:49 Build Finished (took 355ms)
+

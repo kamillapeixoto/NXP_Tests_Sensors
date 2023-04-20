@@ -1,0 +1,14 @@
+11:55:00 **** Incremental Build of configuration Debug for project LPSPI ****
+make -j8 all 
+Building file: ../src/main.c
+Executing target #6 ../src/main.c
+Invoking: Standard S32DS C Compiler
+arm-none-eabi-gcc "@src/main.args" -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c:14:17: fatal error: Cpu.h: No such file or directory
+ #include "Cpu.h"
+                 ^
+compilation terminated.
+make: *** [src/subdir.mk:65: src/main.o] Error 1
+
+11:55:01 Build Finished (took 480ms)
+

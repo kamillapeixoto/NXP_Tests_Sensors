@@ -104,7 +104,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x20 freemaster_appcmd.o
  .debug_line    0x00000000       0x5b freemaster_appcmd.o
- .debug_str     0x00000000      0x2e3 freemaster_appcmd.o
+ .debug_str     0x00000000      0x2e8 freemaster_appcmd.o
  .comment       0x00000000       0xa1 freemaster_appcmd.o
  .debug_frame   0x00000000       0x60 freemaster_appcmd.o
  .ARM.attributes
@@ -124,7 +124,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 freemaster_sfio.o
  .debug_line    0x00000000       0x1d freemaster_sfio.o
- .debug_str     0x00000000      0x1c2 freemaster_sfio.o
+ .debug_str     0x00000000      0x1c7 freemaster_sfio.o
  .comment       0x00000000       0xa1 freemaster_sfio.o
  .ARM.attributes
                 0x00000000       0x39 freemaster_sfio.o
@@ -136,7 +136,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 freemaster_tsa.o
  .debug_line    0x00000000       0x1d freemaster_tsa.o
- .debug_str     0x00000000      0x1c1 freemaster_tsa.o
+ .debug_str     0x00000000      0x1c6 freemaster_tsa.o
  .comment       0x00000000       0xa1 freemaster_tsa.o
  .ARM.attributes
                 0x00000000       0x39 freemaster_tsa.o
@@ -151,7 +151,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x20 ftm_chn_irq.o
  .debug_line    0x00000000      0x502 ftm_chn_irq.o
- .debug_str     0x00000000     0x11a2 ftm_chn_irq.o
+ .debug_str     0x00000000     0x11a7 ftm_chn_irq.o
  .comment       0x00000000       0xa1 ftm_chn_irq.o
  .debug_frame   0x00000000      0x1e0 ftm_chn_irq.o
  .ARM.attributes
@@ -172,7 +172,7 @@ Discarded input sections
                 0x00000000       0x20 ftm_mc_driver.o
  .debug_ranges  0x00000000       0x18 ftm_mc_driver.o
  .debug_line    0x00000000      0x293 ftm_mc_driver.o
- .debug_str     0x00000000     0x15c7 ftm_mc_driver.o
+ .debug_str     0x00000000     0x15cc ftm_mc_driver.o
  .comment       0x00000000       0xa1 ftm_mc_driver.o
  .debug_frame   0x00000000       0x70 ftm_mc_driver.o
  .ARM.attributes
@@ -187,7 +187,7 @@ Discarded input sections
                 0x00000000       0x20 ftm_oc_driver.o
  .debug_ranges  0x00000000       0xa8 ftm_oc_driver.o
  .debug_line    0x00000000      0x38d ftm_oc_driver.o
- .debug_str     0x00000000     0x1857 ftm_oc_driver.o
+ .debug_str     0x00000000     0x185c ftm_oc_driver.o
  .comment       0x00000000       0xa1 ftm_oc_driver.o
  .debug_frame   0x00000000       0x74 ftm_oc_driver.o
  .ARM.attributes
@@ -204,7 +204,7 @@ Discarded input sections
                 0x00000000       0x20 ftm_qd_driver.o
  .debug_ranges  0x00000000       0x78 ftm_qd_driver.o
  .debug_line    0x00000000      0x2e0 ftm_qd_driver.o
- .debug_str     0x00000000     0x1791 ftm_qd_driver.o
+ .debug_str     0x00000000     0x1796 ftm_qd_driver.o
  .comment       0x00000000       0xa1 ftm_qd_driver.o
  .debug_frame   0x00000000       0x68 ftm_qd_driver.o
  .ARM.attributes
@@ -219,7 +219,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x20 lin_common.o
  .debug_line    0x00000000      0x1e0 lin_common.o
- .debug_str     0x00000000      0x2ab lin_common.o
+ .debug_str     0x00000000      0x2b0 lin_common.o
  .comment       0x00000000       0xa1 lin_common.o
  .debug_frame   0x00000000       0x3c lin_common.o
  .ARM.attributes
@@ -233,7 +233,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x20 lin_driver.o
  .debug_line    0x00000000      0x286 lin_driver.o
- .debug_str     0x00000000     0x17b9 lin_driver.o
+ .debug_str     0x00000000     0x17be lin_driver.o
  .comment       0x00000000       0xa1 lin_driver.o
  .debug_frame   0x00000000      0x220 lin_driver.o
  .ARM.attributes
@@ -246,7 +246,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x20 lin_irq.o
  .debug_line    0x00000000       0x70 lin_irq.o
- .debug_str     0x00000000      0x26c lin_irq.o
+ .debug_str     0x00000000      0x271 lin_irq.o
  .comment       0x00000000       0xa1 lin_irq.o
  .debug_frame   0x00000000       0x58 lin_irq.o
  .ARM.attributes
@@ -262,7 +262,7 @@ Discarded input sections
                 0x00000000       0x20 lin_lpuart_driver.o
  .debug_ranges  0x00000000       0x68 lin_lpuart_driver.o
  .debug_line    0x00000000      0x71f lin_lpuart_driver.o
- .debug_str     0x00000000     0x23c0 lin_lpuart_driver.o
+ .debug_str     0x00000000     0x23c5 lin_lpuart_driver.o
  .comment       0x00000000       0xa1 lin_lpuart_driver.o
  .debug_frame   0x00000000      0x29c lin_lpuart_driver.o
  .ARM.attributes
@@ -1710,88 +1710,88 @@ OUTPUT(Pressure_SPI.elf elf32-littlearm)
  .debug_aranges
                 0x000004f0       0x20 system_S32K144.o
 
-.debug_str      0x00000000     0xdc75
- .debug_str     0x00000000       0x6d startup_S32K144.o
- .debug_str     0x0000006d     0x2b1f Pressure_SPI.o
-                               0x2cb6 (size before relaxing)
- .debug_str     0x00002b8c       0x14 Pressure_SPI_data.o
-                               0x1e45 (size before relaxing)
- .debug_str     0x00002ba0     0x1248 adc_driver.o
-                               0x2572 (size before relaxing)
- .debug_str     0x00003de8     0x27fc clock_S32K1xx.o
-                               0x392c (size before relaxing)
- .debug_str     0x000065e4     0x171c edma_driver.o
-                               0x28ac (size before relaxing)
- .debug_str     0x00007d00      0x155 edma_hw_access.o
-                                0x7c5 (size before relaxing)
- .debug_str     0x00007e55      0x141 edma_irq.o
-                                0x492 (size before relaxing)
- .debug_str     0x00007f96      0x1b8 freemaster_S32K1xx.o
-                                0x37b (size before relaxing)
- .debug_str     0x0000814e      0x34b freemaster_interface_init.o
-                               0x13da (size before relaxing)
- .debug_str     0x00008499       0xf6 freemaster_protocol.o
-                                0x2f7 (size before relaxing)
- .debug_str     0x0000858f      0x3ba freemaster_rec.o
-                                0x5f3 (size before relaxing)
- .debug_str     0x00008949       0x83 freemaster_scope.o
-                                0x27c (size before relaxing)
- .debug_str     0x000089cc      0x198 freemaster_serial.o
-                                0x3b3 (size before relaxing)
- .debug_str     0x00008b64       0x12 ftm0_pwm_params.o
-                               0x12c5 (size before relaxing)
- .debug_str     0x00008b76      0xb47 ftm_common.o
-                               0x26d2 (size before relaxing)
- .debug_str     0x000096bd      0x113 ftm_fault_irq.o
-                                0xc8e (size before relaxing)
- .debug_str     0x000097d0       0xa8 ftm_hw_access.o
-                                0xd2c (size before relaxing)
- .debug_str     0x00009878      0x6ed ftm_ic_driver.o
-                               0x1bf2 (size before relaxing)
- .debug_str     0x00009f65      0x490 ftm_pwm_driver.o
-                               0x1fd2 (size before relaxing)
- .debug_str     0x0000a3f5      0x305 interrupt_manager.o
-                                0xb48 (size before relaxing)
- .debug_str     0x0000a6fa      0x809 lpit_driver.o
-                               0x1cee (size before relaxing)
- .debug_str     0x0000af03      0x4c2 lpspi_hw_access.o
-                               0x1ce1 (size before relaxing)
- .debug_str     0x0000b3c5       0x42 lpspi_irq.o
-                                0xacb (size before relaxing)
- .debug_str     0x0000b407      0x3a9 lpspi_master_driver.o
-                               0x204c (size before relaxing)
- .debug_str     0x0000b7b0      0x10d lpspi_shared_function.o
-                                0xcd9 (size before relaxing)
- .debug_str     0x0000b8bd      0x161 lpspi_slave_driver.o
-                               0x1e9e (size before relaxing)
- .debug_str     0x0000ba1e      0x935 lpuart_driver.o
-                               0x228a (size before relaxing)
- .debug_str     0x0000c353      0x17d lpuart_hw_access.o
-                               0x1056 (size before relaxing)
- .debug_str     0x0000c4d0       0x46 lpuart_irq.o
-                                0x23e (size before relaxing)
- .debug_str     0x0000c516       0xa3 mbd_adc_irq.o
-                                0x76e (size before relaxing)
- .debug_str     0x0000c5b9       0x85 mbd_main.o
-                               0x21e1 (size before relaxing)
- .debug_str     0x0000c63e      0x1ae osif_baremetal.o
-                               0x1088 (size before relaxing)
- .debug_str     0x0000c7ec      0x56a pins_driver.o
-                               0x13d0 (size before relaxing)
- .debug_str     0x0000cd56      0x1c0 pins_port_hw_access.o
-                                0x907 (size before relaxing)
- .debug_str     0x0000cf16      0x4d3 power_manager.o
-                                0xfef (size before relaxing)
- .debug_str     0x0000d3e9      0x501 power_manager_S32K1xx.o
-                               0x1927 (size before relaxing)
- .debug_str     0x0000d8ea      0x141 power_smc_hw_access.o
-                                0xec7 (size before relaxing)
- .debug_str     0x0000da2b       0xa9 s32k_clock_init.o
-                               0x2239 (size before relaxing)
- .debug_str     0x0000dad4      0x112 startup.o
-                                0x400 (size before relaxing)
- .debug_str     0x0000dbe6       0x8f system_S32K144.o
-                                0x401 (size before relaxing)
+.debug_str      0x00000000     0xdc7a
+ .debug_str     0x00000000       0x72 startup_S32K144.o
+ .debug_str     0x00000072     0x2b1f Pressure_SPI.o
+                               0x2cbb (size before relaxing)
+ .debug_str     0x00002b91       0x14 Pressure_SPI_data.o
+                               0x1e4a (size before relaxing)
+ .debug_str     0x00002ba5     0x1248 adc_driver.o
+                               0x2577 (size before relaxing)
+ .debug_str     0x00003ded     0x27fc clock_S32K1xx.o
+                               0x3931 (size before relaxing)
+ .debug_str     0x000065e9     0x171c edma_driver.o
+                               0x28b1 (size before relaxing)
+ .debug_str     0x00007d05      0x155 edma_hw_access.o
+                                0x7ca (size before relaxing)
+ .debug_str     0x00007e5a      0x141 edma_irq.o
+                                0x497 (size before relaxing)
+ .debug_str     0x00007f9b      0x1b8 freemaster_S32K1xx.o
+                                0x380 (size before relaxing)
+ .debug_str     0x00008153      0x34b freemaster_interface_init.o
+                               0x13df (size before relaxing)
+ .debug_str     0x0000849e       0xf6 freemaster_protocol.o
+                                0x2fc (size before relaxing)
+ .debug_str     0x00008594      0x3ba freemaster_rec.o
+                                0x5f8 (size before relaxing)
+ .debug_str     0x0000894e       0x83 freemaster_scope.o
+                                0x281 (size before relaxing)
+ .debug_str     0x000089d1      0x198 freemaster_serial.o
+                                0x3b8 (size before relaxing)
+ .debug_str     0x00008b69       0x12 ftm0_pwm_params.o
+                               0x12ca (size before relaxing)
+ .debug_str     0x00008b7b      0xb47 ftm_common.o
+                               0x26d7 (size before relaxing)
+ .debug_str     0x000096c2      0x113 ftm_fault_irq.o
+                                0xc93 (size before relaxing)
+ .debug_str     0x000097d5       0xa8 ftm_hw_access.o
+                                0xd31 (size before relaxing)
+ .debug_str     0x0000987d      0x6ed ftm_ic_driver.o
+                               0x1bf7 (size before relaxing)
+ .debug_str     0x00009f6a      0x490 ftm_pwm_driver.o
+                               0x1fd7 (size before relaxing)
+ .debug_str     0x0000a3fa      0x305 interrupt_manager.o
+                                0xb4d (size before relaxing)
+ .debug_str     0x0000a6ff      0x809 lpit_driver.o
+                               0x1cf3 (size before relaxing)
+ .debug_str     0x0000af08      0x4c2 lpspi_hw_access.o
+                               0x1ce6 (size before relaxing)
+ .debug_str     0x0000b3ca       0x42 lpspi_irq.o
+                                0xad0 (size before relaxing)
+ .debug_str     0x0000b40c      0x3a9 lpspi_master_driver.o
+                               0x2051 (size before relaxing)
+ .debug_str     0x0000b7b5      0x10d lpspi_shared_function.o
+                                0xcde (size before relaxing)
+ .debug_str     0x0000b8c2      0x161 lpspi_slave_driver.o
+                               0x1ea3 (size before relaxing)
+ .debug_str     0x0000ba23      0x935 lpuart_driver.o
+                               0x228f (size before relaxing)
+ .debug_str     0x0000c358      0x17d lpuart_hw_access.o
+                               0x105b (size before relaxing)
+ .debug_str     0x0000c4d5       0x46 lpuart_irq.o
+                                0x243 (size before relaxing)
+ .debug_str     0x0000c51b       0xa3 mbd_adc_irq.o
+                                0x773 (size before relaxing)
+ .debug_str     0x0000c5be       0x85 mbd_main.o
+                               0x21e6 (size before relaxing)
+ .debug_str     0x0000c643      0x1ae osif_baremetal.o
+                               0x108d (size before relaxing)
+ .debug_str     0x0000c7f1      0x56a pins_driver.o
+                               0x13d5 (size before relaxing)
+ .debug_str     0x0000cd5b      0x1c0 pins_port_hw_access.o
+                                0x90c (size before relaxing)
+ .debug_str     0x0000cf1b      0x4d3 power_manager.o
+                                0xff4 (size before relaxing)
+ .debug_str     0x0000d3ee      0x501 power_manager_S32K1xx.o
+                               0x192c (size before relaxing)
+ .debug_str     0x0000d8ef      0x141 power_smc_hw_access.o
+                                0xecc (size before relaxing)
+ .debug_str     0x0000da30       0xa9 s32k_clock_init.o
+                               0x223e (size before relaxing)
+ .debug_str     0x0000dad9      0x112 startup.o
+                                0x405 (size before relaxing)
+ .debug_str     0x0000dbeb       0x8f system_S32K144.o
+                                0x406 (size before relaxing)
 
 .debug_loc      0x00000000    0x140f8
  .debug_loc     0x00000000      0x688 Pressure_SPI.o

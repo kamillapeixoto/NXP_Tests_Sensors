@@ -120,7 +120,7 @@ int main(void)
      *  -   See PinSettings component for more info
      */
 
-    // This delay is necessary to garantee the sensor will be able to send the data correctly after
+    // This delay is necessary to guarantee the sensor will be able to send the data correctly after
     // reinitializing it, removing the power supply or flashing a new code.
     delay(500000);
 

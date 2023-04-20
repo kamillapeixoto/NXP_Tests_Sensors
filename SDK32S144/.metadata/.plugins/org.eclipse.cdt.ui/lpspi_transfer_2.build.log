@@ -1,0 +1,51 @@
+15:23:22 **** Incremental Build of configuration Debug_FLASH for project lpspi_transfer_2 ****
+make -j8 all 
+Building file: ../Sources/main.c
+Executing target #35 ../Sources/main.c
+Invoking: Standard S32DS C Compiler
+arm-none-eabi-gcc "@Sources/main.args" -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:262:48: warning: passing argument 2 of 'LPSPI_DRV_MasterTransferBlocking' from incompatible pointer type
+      sts=  LPSPI_DRV_MasterTransferBlocking(0U, &masterDataSend, &masterDataReceive, BUFFER_SIZE, TIMEOUT);
+                                                ^
+In file included from C:/Users/kamil/OneDrive/Documents/GitHub/NXP_Tests_Scaleo/SDK32S144/lpspi_transfer_2/Generated_Code/Cpu.h:60:0,
+                 from ../Sources/main.c:33:
+C:/NXP/S32DS_ARM_v2.0/S32DS/S32SDK_S32K14x_EAR_0.8.4/platform/drivers/inc/lpspi_master_driver.h:243:10: note: expected 'const uint8_t *' but argument is of type 'uint8_t (*)[4]'
+ status_t LPSPI_DRV_MasterTransferBlocking(uint32_t instance,
+          ^
+../Sources/main.c:262:65: warning: passing argument 3 of 'LPSPI_DRV_MasterTransferBlocking' from incompatible pointer type
+      sts=  LPSPI_DRV_MasterTransferBlocking(0U, &masterDataSend, &masterDataReceive, BUFFER_SIZE, TIMEOUT);
+                                                                 ^
+In file included from C:/Users/kamil/OneDrive/Documents/GitHub/NXP_Tests_Scaleo/SDK32S144/lpspi_transfer_2/Generated_Code/Cpu.h:60:0,
+                 from ../Sources/main.c:33:
+C:/NXP/S32DS_ARM_v2.0/S32DS/S32SDK_S32K14x_EAR_0.8.4/platform/drivers/inc/lpspi_master_driver.h:243:10: note: expected 'uint8_t *' but argument is of type 'uint8_t (*)[4]'
+ status_t LPSPI_DRV_MasterTransferBlocking(uint32_t instance,
+          ^
+../Sources/main.c:175:17: warning: unused variable 'ftmStateStruct' [-Wunused-variable]
+     ftm_state_t ftmStateStruct;
+                 ^
+../Sources/main.c: In function 'pressure_calc':
+../Sources/main.c:149:17: warning: 'Out_max_d' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  S = (Out_max_d - Out_min_d)/(Pmax-Pmin);
+                 ^
+../Sources/main.c:149:29: warning: 'Pmax' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  S = (Out_max_d - Out_min_d)/(Pmax-Pmin);
+                             ^
+Finished building: ../Sources/main.c
+ 
+Building target: lpspi_transfer_2.elf
+Executing target #36 lpspi_transfer_2.elf
+Invoking: Standard S32DS C Linker
+arm-none-eabi-gcc -o "lpspi_transfer_2.elf" "@lpspi_transfer_2.args"   
+Finished building target: lpspi_transfer_2.elf
+ 
+Executing target #37 lpspi_transfer_2.siz
+Invoking: Standard S32DS Print Size
+arm-none-eabi-size --format=berkeley  lpspi_transfer_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14108	    232	   3248	  17588	   44b4	lpspi_transfer_2.elf
+Finished building: lpspi_transfer_2.siz
+ 
+
+15:23:23 Build Finished (took 1s.417ms)
+

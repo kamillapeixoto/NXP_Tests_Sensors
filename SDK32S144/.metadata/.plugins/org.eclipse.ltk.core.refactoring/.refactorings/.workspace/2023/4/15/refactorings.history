@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;lpspi_transfer_s32k144°é&apos;" deleteContents="true" description="Delete resource &apos;lpspi_transfer_s32k144°é&apos;" element1="/lpspi_transfer_s32k144°é" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1681305631456"/>
+</session>

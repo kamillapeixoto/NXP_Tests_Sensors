@@ -1,0 +1,92 @@
+/*
+ * main.c                       (c) NXP 2016
+ * Description: Simple LPSPI transfer.  A frame is transmitted and results read.
+ * May 31 2016 S. Mihalik - Initial version.
+ * Sep 23 2016 S. Mihalik - Added SBC commands for SPI transfer
+ * Oct 31 2016 SM - Clocks adjusted for SPLL at 160 MHz,
+ *                  tx, rx variables made global
+ * Jul 03 2017 SM - removed code for MC33903 on obsolete EVB
+ */
+
+#include "S32K144.h"           /* include peripheral declarations S32K144 */
+#include "LPSPI.h"
+#include "clocks_and_modes.h"
+#include "Cpu.h"
+#include "clockMan1.h"
+#include "pin_mux.h"
+#include "Send.h"
+#include "Receive.h"
+#include "adConv1.h"
+#include "PWM.h"
+#include "osif1.h"
+#include "dmaController1.h"
+#if CPU_INIT_CONFIG
+  #include "Init_Config.h"
+#endif
+#define BUFFER_SIZE 4U
+#define TIMEOUT 100U
+volatile int exit_code = 0;
+/* User includes (#include below this line is not maintained by Processor Expert) */
+
+#include <stdint.h>
+#include <stdbool.h>
+
+  uint16_t tx_16bits = 0xFD00;  /* SBC UJA1169: read Dev ID Reg @ 0x7E (expect non-zero)*/
+                                /* Note: Obsolete EVB with MC33903 example used 0c2580 */
+                                /*       to read SAFE reg flags (expect nonzero result).*/
+  uint16_t LPSPI1_16bits_read;  /* Returned data in to SPI */
+
+void WDOG_disable (void){
+  WDOG->CNT=0xD928C520;     /*Unlock watchdog*/
+  WDOG->TOVAL=0x0000FFFF;   /*Maximum timeout value*/
+  WDOG->CS = 0x00002100;    /*Disable watchdog*/
+}
+
+void PORT_init (void) {
+  PCC->PCCn[PCC_PORTB_INDEX ]|=PCC_PCCn_CGC_MASK; /* Enable clock for PORTB */
+  PORTB->PCR[2]|=PORT_PCR_MUX(3); /* Port B14: MUX = ALT3, LPSPI1_SCK */
+  PORTB->PCR[3]|=PORT_PCR_MUX(3); /* Port B15: MUX = ALT3, LPSPI1_SIN */
+  PORTB->PCR[4]|=PORT_PCR_MUX(3); /* Port B16: MUX = ALT3, LPSPI1_SOUT */
+  PORTB->PCR[5]|=PORT_PCR_MUX(3); /* Port B17: MUX = ALT3, LPSPI1_PCS3 */
+}
+
+int main(void) {
+	  /* Write your local variable definition here */
+
+	  /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
+	  #ifdef PEX_RTOS_INIT
+	    PEX_RTOS_INIT();                 /* Initialization of the selected RTOS. Macro is defined by the RTOS component. */
+	  #endif
+	  /*** End of Processor Expert internal initialization.                    ***/
+
+	    ftm_state_t ftmStateStruct;
+	    uint8_t masterDataSend[BUFFER_SIZE];
+
+	    WDOG_disable();
+
+	    /* Initialize and configure clocks
+	     *     -   see clock manager component for details
+	     */
+	     CLOCK_SYS_Init(g_clockManConfigsArr, CLOCK_MANAGER_CONFIG_CNT,
+	                           g_clockManCallbacksArr, CLOCK_MANAGER_CALLBACK_CNT);
+	     CLOCK_SYS_UpdateConfiguration(0U, CLOCK_MANAGER_POLICY_AGREEMENT);
+
+
+
+
+
+   uint32_t counter = 0;
+
+
+  LPSPI1_init_master();    /* Initialize LPSPI 1 as master */
+  PORT_init();             /* Configure ports */
+
+  PINS_DRV_Init(NUM_OF_CONFIGURED_PINS, g_pin_mux_InitConfigArr);
+
+
+  for(;;) {
+    LPSPI1_transmit_16bits(tx_16bits);       /* Transmit half word (16 bits) on LPSPI1 */
+    LPSPI1_16bits_read = LPSPI1_receive_16bits(); /* Receive half word on LSPI1 */
+    counter++;
+  }
+}
