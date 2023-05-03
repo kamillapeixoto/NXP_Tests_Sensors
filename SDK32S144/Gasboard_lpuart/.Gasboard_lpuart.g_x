@@ -30,7 +30,7 @@
       <File Name="SDK/platform/drivers/src/lpuart/lpuart_irq.c" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
       <File Name="Generated_Code/dmaController1.c" FileDate="2023-04-24, 10:39:47" FileAge="1682325587672" FileType="45637" CompNumb="15" />
       <File Name="SDK/rtos/osif/osif_baremetal.c" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
-      <File Name="Sources/main.c" FileDate="2023-04-28, 10:33:07" FileAge="1682670787297" FileType="128" />
+      <File Name="Sources/main.c" FileDate="2023-05-03, 10:50:26" FileAge="1683103826785" FileType="128" />
       <File Name="SDK/platform/drivers/src/lpuart/lpuart_hw_access.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
       <File Name="SDK/platform/devices/startup.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
       <File Name="Generated_Code/clockMan1.h" FileDate="2023-04-24, 10:39:47" FileAge="1682325587679" FileType="45637" CompNumb="4" />
@@ -56,19 +56,19 @@
       <File Name="SDK/platform/drivers/inc/lpuart_driver.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
       <File Name="SDK/platform/drivers/src/pins/pins_driver.c" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
       <File Name="SDK/platform/drivers/src/lpuart/lpuart_driver.c" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
-      <File Name="SDK/platform/devices/common/s32_core_cm4.h" FileDate="2017-08-10, 20:18:10" FileAge="1502389090000" FileType="262144" />
       <File Name="SDK/rtos/osif/osif.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
+      <File Name="SDK/platform/devices/common/s32_core_cm4.h" FileDate="2017-08-10, 20:18:10" FileAge="1502389090000" FileType="262144" />
       <File Name="SDK/platform/drivers/src/clock/S32K1xx/pcc_hw_access.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
       <File Name="SDK/platform/devices/status.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
       <File Name="SDK/platform/drivers/src/pins/pins_gpio_hw_access.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
       <File Name="SDK/platform/drivers/src/clock/S32K1xx/smc_hw_access.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
-      <File Name="Generated_Code/lpuart1.h" FileDate="2023-04-24, 10:39:47" FileAge="1682325587671" FileType="45637" CompNumb="8" />
       <File Name="SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
+      <File Name="Generated_Code/lpuart1.h" FileDate="2023-04-24, 10:39:47" FileAge="1682325587671" FileType="45637" CompNumb="8" />
       <File Name="SDK/platform/drivers/src/pins/pins_port_hw_access.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
       <File Name="SDK/platform/drivers/src/interrupt/interrupt_manager.c" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
-      <File Name="Generated_Code/lpuart1.c" FileDate="2023-04-24, 10:39:47" FileAge="1682325587668" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/osif1.h" FileDate="2023-04-24, 10:39:47" FileAge="1682325587676" FileType="45637" CompNumb="13" />
       <File Name="SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.c" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
+      <File Name="Generated_Code/osif1.h" FileDate="2023-04-24, 10:39:47" FileAge="1682325587676" FileType="45637" CompNumb="13" />
+      <File Name="Generated_Code/lpuart1.c" FileDate="2023-04-24, 10:39:47" FileAge="1682325587668" FileType="45637" CompNumb="8" />
       <File Name="SDK/platform/drivers/src/pins/pins_port_hw_access.c" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
       <File Name="SDK/platform/drivers/src/clock/S32K1xx/sim_hw_access.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
       <File Name="Generated_Code/osif1.c" FileDate="2023-04-24, 10:39:47" FileAge="1682325587675" FileType="45637" CompNumb="13" />
@@ -79,5 +79,5 @@
       <File Name="SDK/platform/drivers/src/edma/edma_hw_access.c" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
     </GeneratedByPE>
   </GeneratedFilesList>
-  <CodeGenReference>3</CodeGenReference>
+  <CodeGenReference>5</CodeGenReference>
 </CodeGenerationInfo>

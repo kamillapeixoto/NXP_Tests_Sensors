@@ -39,12 +39,19 @@ volatile int exit_code = 0;
 it will send back any character you send to it.\r\n\
 The board will greet you if you send 'Hello Board'\r\
 \nNow you can begin typing:\r\n"
-#define TX_BUFFER_SIZE 4U
+#define TX_BUFFER_SIZE 5U
 #define RX_BUFFER_SIZE 16U
 #define LPUART_TIMEOUT 100U
 
 /* Declare a buffer used to store the received data */
 uint8_t	 RX_buffer[RX_BUFFER_SIZE];
+float	 sig_data[10];
+
+
+float concentration;
+float flow;
+float temperature;
+
 
 // Delay function - do nothing for a number of cycles
 void delay(volatile int cycles)
@@ -65,7 +72,7 @@ int main(void)
 
   //uint8_t	 TX_buffer[TX_BUFFER_SIZE]= {0, 3, 0, 0, 0, 8, 69, 221}; // = {00, 03, 00, 00, 00, 08, 45, DD} in decimal
 
-  uint8_t	 TX_buffer[TX_BUFFER_SIZE] = {0x11, 0x01, 0x01, 0xED};
+  uint8_t	 TX_buffer[TX_BUFFER_SIZE] = {0x11, 0x02, 0x02, 0x00, 0xEB};
   /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
 #ifdef PEX_RTOS_INIT
   PEX_RTOS_INIT(); /* Initialization of the selected RTOS. Macro is defined by the RTOS component. */
@@ -123,6 +130,13 @@ int main(void)
 	 // while(LPUART_DRV_GetReceiveStatus(INST_LPUART1, &bytesRemaining) != STATUS_SUCCESS);
 
 	   delay(50000);
+	   for (uint8_t i = 0; i<RX_BUFFER_SIZE; i++){
+		   sig_data[i] = (float) RX_buffer[i+4];
+	   }
+
+	   concentration = (sig_data[6]*256 + sig_data[7])/10; //(Vol %)
+	   flow          = (sig_data[8]*256 + sig_data[9])/10; //(L/min)
+	   temperature   = (sig_data[4]*256 + sig_data[5])/10; //(C)
 
     }
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
