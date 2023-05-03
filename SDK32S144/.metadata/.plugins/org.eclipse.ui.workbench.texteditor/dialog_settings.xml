@@ -2,15 +2,21 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="LPSP0" key="selection"/>
+		<item value="ADC_VREFH" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="ADC_VREFH"/>
+			<item value="adcRawValue1"/>
+			<item value="adcRawValue0"/>
+			<item value="ADC_VOLTAGEREF_VALT"/>
 			<item value="LPSPI"/>
 		</list>
 		<list key="replacehistory">
+			<item value="voltageRawValue"/>
+			<item value="currentRawValue"/>
 			<item value="LPSP0"/>
 		</list>
 	</section>

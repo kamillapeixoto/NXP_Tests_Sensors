@@ -1,0 +1,47 @@
+17:30:43 **** Incremental Build of configuration Debug_RAM for project Gasboard_lpuart ****
+make -j8 all 
+Building file: ../Generated_Code/pin_mux.c
+Executing target #6 ../Generated_Code/pin_mux.c
+Building file: ../Sources/main.c
+Invoking: Standard S32DS C Compiler
+arm-none-eabi-gcc "@Generated_Code/pin_mux.args" -MMD -MP -MF"Generated_Code/pin_mux.d" -MT"Generated_Code/pin_mux.o" -c -o "Generated_Code/pin_mux.o" "../Generated_Code/pin_mux.c"
+Executing target #22 ../Sources/main.c
+Invoking: Standard S32DS C Compiler
+arm-none-eabi-gcc "@Sources/main.args" -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:113:40: warning: passing argument 2 of 'LPUART_DRV_SendDataBlocking' from incompatible pointer type
+     LPUART_DRV_SendDataBlocking (INST_LPUART1, &TX_buffer, TX_BUFFER_SIZE, LPUART_TIMEOUT);
+                                        ^
+In file included from C:/Users/kamil/OneDrive/Documents/GitHub/NXP_Tests_Scaleo/SDK32S144/Gasboard_lpuart/Generated_Code/Cpu.h:60:0,
+                 from ../Sources/main.c:25:
+C:/NXP/S32DS_ARM_v2.0/S32DS/S32SDK_S32K14x_EAR_0.8.4/platform/drivers/inc/lpuart_driver.h:229:10: note: expected 'const uint8_t *' but argument is of type 'uint8_t (*)[4]'
+ status_t LPUART_DRV_SendDataBlocking(uint32_t instance,
+          ^
+../Sources/main.c:120:42: warning: passing argument 2 of 'LPUART_DRV_ReceiveDataBlocking' from incompatible pointer type
+     LPUART_DRV_ReceiveDataBlocking(INST_LPUART1, &RX_buffer, RX_BUFFER_SIZE, LPUART_TIMEOUT);
+                                          ^
+In file included from C:/Users/kamil/OneDrive/Documents/GitHub/NXP_Tests_Scaleo/SDK32S144/Gasboard_lpuart/Generated_Code/Cpu.h:60:0,
+                 from ../Sources/main.c:25:
+C:/NXP/S32DS_ARM_v2.0/S32DS/S32SDK_S32K14x_EAR_0.8.4/platform/drivers/inc/lpuart_driver.h:300:10: note: expected 'uint8_t *' but argument is of type 'uint8_t (*)[16]'
+ status_t LPUART_DRV_ReceiveDataBlocking(uint32_t instance,
+          ^
+Finished building: ../Generated_Code/pin_mux.c
+ 
+Finished building: ../Sources/main.c
+ 
+Building target: Gasboard_lpuart.elf
+Executing target #23 Gasboard_lpuart.elf
+Invoking: Standard S32DS C Linker
+arm-none-eabi-gcc -o "Gasboard_lpuart.elf" "@Gasboard_lpuart.args"   
+Finished building target: Gasboard_lpuart.elf
+ 
+Executing target #24 Gasboard_lpuart.siz
+Invoking: Standard S32DS Print Size
+arm-none-eabi-size --format=berkeley  Gasboard_lpuart.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10900	   2324	   2212	  15436	   3c4c	Gasboard_lpuart.elf
+Finished building: Gasboard_lpuart.siz
+Command canceled
+
+17:30:44 Build Cancelled (took 1s.387ms)
+

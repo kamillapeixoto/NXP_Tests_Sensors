@@ -1,0 +1,41 @@
+10:26:53 **** Incremental Build of configuration Debug_FLASH for project PwrSupply_UART ****
+make -j8 all 
+Building file: ../Sources/main.c
+Executing target #22 ../Sources/main.c
+Invoking: Standard S32DS C Compiler
+arm-none-eabi-gcc "@Sources/main.args" -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:107:40: warning: passing argument 2 of 'LPUART_DRV_SendDataBlocking' from incompatible pointer type
+     LPUART_DRV_SendDataBlocking (INST_LPUART1, &TX_buffer, TX_BUFFER_SIZE, LPUART_TIMEOUT);
+                                        ^
+In file included from C:/Users/kamil/OneDrive/Documents/GitHub/NXP_Tests_Scaleo/SDK32S144/PwrSupply_UART/Generated_Code/Cpu.h:60:0,
+                 from ../Sources/main.c:21:
+C:/NXP/S32DS_ARM_v2.0/S32DS/S32SDK_S32K14x_EAR_0.8.4/platform/drivers/inc/lpuart_driver.h:229:10: note: expected 'const uint8_t *' but argument is of type 'uint8_t (*)[15]'
+ status_t LPUART_DRV_SendDataBlocking(uint32_t instance,
+          ^
+../Sources/main.c:114:42: warning: passing argument 2 of 'LPUART_DRV_ReceiveDataBlocking' from incompatible pointer type
+     LPUART_DRV_ReceiveDataBlocking(INST_LPUART1, &RX_buffer, RX_BUFFER_SIZE, LPUART_TIMEOUT);
+                                          ^
+In file included from C:/Users/kamil/OneDrive/Documents/GitHub/NXP_Tests_Scaleo/SDK32S144/PwrSupply_UART/Generated_Code/Cpu.h:60:0,
+                 from ../Sources/main.c:21:
+C:/NXP/S32DS_ARM_v2.0/S32DS/S32SDK_S32K14x_EAR_0.8.4/platform/drivers/inc/lpuart_driver.h:300:10: note: expected 'uint8_t *' but argument is of type 'uint8_t (*)[16]'
+ status_t LPUART_DRV_ReceiveDataBlocking(uint32_t instance,
+          ^
+Finished building: ../Sources/main.c
+ 
+Building target: PwrSupply_UART.elf
+Executing target #23 PwrSupply_UART.elf
+Invoking: Standard S32DS C Linker
+arm-none-eabi-gcc -o "PwrSupply_UART.elf" "@PwrSupply_UART.args"   
+Finished building target: PwrSupply_UART.elf
+ 
+Executing target #24 PwrSupply_UART.siz
+Invoking: Standard S32DS Print Size
+arm-none-eabi-size --format=berkeley  PwrSupply_UART.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10944	   2324	   3232	  16500	   4074	PwrSupply_UART.elf
+Finished building: PwrSupply_UART.siz
+ 
+
+10:26:55 Build Finished (took 1s.430ms)
+

@@ -1,0 +1,13 @@
+15:36:41 **** Incremental Build of configuration Debug_FLASH for project ADC_PwrSupply_VI ****
+make -j8 all 
+Building target: ADC_PwrSupply_VI.elf
+Executing target #24 ADC_PwrSupply_VI.elf
+Invoking: Standard S32DS C Linker
+arm-none-eabi-gcc -o "ADC_PwrSupply_VI.elf" "@ADC_PwrSupply_VI.args"   
+c:/nxp/s32ds_arm_v2.0/cross_tools/gcc-arm-none-eabi-4_9/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/bin/ld.exe: unrecognized option '-T'
+c:/nxp/s32ds_arm_v2.0/cross_tools/gcc-arm-none-eabi-4_9/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/bin/ld.exe: use the --help option for usage information
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:67: ADC_PwrSupply_VI.elf] Error 1
+
+15:36:42 Build Finished (took 476ms)
+

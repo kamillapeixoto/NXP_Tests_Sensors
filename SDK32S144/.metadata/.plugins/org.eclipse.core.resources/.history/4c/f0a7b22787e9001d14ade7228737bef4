@@ -1,0 +1,278 @@
+/*
+ * Copyright (c) 2015 - 2016 , Freescale Semiconductor, Inc.
+ * Copyright 2016-2017 NXP
+ * All rights reserved.
+ *
+ * THIS SOFTWARE IS PROVIDED BY NXP "AS IS" AND ANY EXPRESSED OR
+ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ * IN NO EVENT SHALL NXP OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+ * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+ * THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+/* Including needed modules to compile this module/procedure */
+#include "Cpu.h"
+#include "pin_mux.h"
+#include "osif1.h"
+#include "dmaController1.h"
+#include "clockMan1.h"
+#include "adConv0.h"
+#include "lpuart1.h"
+
+volatile int exit_code = 0;
+/* User includes (#include below this line is not maintained by Processor Expert) */
+
+/* Header file with some helper functions:
+ * 	-	floatToStr:  	convert a floating point variable to a string
+ * 	-	delayCycles:	do nothing for a number of cycles
+ * 	See the header file for more information
+ */
+#include "helper_functions.h"
+#include <string.h>
+#include <stdint.h>
+#include <stdbool.h>
+
+/* This example is setup to work by default with EVB. To use it with other boards
+   please comment the following line
+*/
+
+#define EVB
+
+#ifdef EVB
+	#define ADC_INSTANCE0 	0UL
+	#define ADC_INSTANCE1 	1UL
+	#define ADC_CHN0		0U
+	#define ADC_CHN1		3U
+	#define ADC_VREFH  		3.3f
+	#define ADC_VREFL  		0.0f
+#else
+	#define ADC_INSTANCE 	1UL
+	#define ADC_CHN			10U
+	#define ADC_VREFH  		1.2f
+	#define ADC_VREFL  		0.0f
+#endif
+
+#define welcomeStr "This is an ADC example, it will show you the value converted \
+                     \r\nfrom ADC1 Input 11 (or ADC0 Input 12 for EVB )\r\n"
+#define headerStr  "ADC result: "
+
+uint16_t currentRawValue;
+uint16_t voltageRawValue;
+
+float adcValue0;
+float adcAverage0;
+
+float adcValue1;
+float adcAverage1;
+
+float currentValue;
+float currentAverage;
+
+
+float voltageValue;
+float voltageAverage;
+
+
+/*!
+ \brief The main function for the project.
+ \details The startup initialization sequence is the following:
+ * - startup asm routine
+ * - main()
+ */
+int main(void)
+{
+	/* Enable the floating point unit */
+	enableFPU();
+
+	/* Write your local variable definition here */
+	/* Variables in which we store data from ADC */
+
+	uint16_t adcMax;
+
+	const float voltage_pol[2] = {0.009630774620782, 0.0902273288051548};
+	const float current_pol[2] = {0.00169404924302870, -0.0138943629841409};
+
+
+
+
+	/*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
+#ifdef PEX_RTOS_INIT
+	PEX_RTOS_INIT(); /* Initialization of the selected RTOS. Macro is defined by the RTOS component. */
+#endif
+	/*** End of Processor Expert internal initialization.                    ***/
+
+	/* Write your code here */
+	/* For example: for(;;) { } */
+
+	/* Initialize and configure clocks
+	 * 	-	see clock manager component for details
+	 */
+	CLOCK_SYS_Init(g_clockManConfigsArr, CLOCK_MANAGER_CONFIG_CNT,
+			g_clockManCallbacksArr, CLOCK_MANAGER_CALLBACK_CNT);
+	CLOCK_SYS_UpdateConfiguration(0U, CLOCK_MANAGER_POLICY_AGREEMENT);
+
+	/* Initialize pins
+	 *	-	See PinSettings component for more info
+	 */
+	PINS_DRV_Init(NUM_OF_CONFIGURED_PINS, g_pin_mux_InitConfigArr);
+
+
+	const adc_converter_config_t adConv0_ConvConfig1 = {
+	  .clockDivide = ADC_CLK_DIVIDE_8,
+	  .sampleTime = 255U,
+	  .resolution = ADC_RESOLUTION_12BIT,
+	  .inputClock = ADC_CLK_ALT_1,
+	  .trigger = ADC_TRIGGER_SOFTWARE,
+	  .pretriggerSel = ADC_PRETRIGGER_SEL_PDB,
+	  .triggerSel = ADC_TRIGGER_SEL_PDB,
+	  .dmaEnable = false,
+	  .voltageRef = ADC_VOLTAGEREF_VREF,
+	  .continuousConvEnable = false,
+	};
+
+	const adc_converter_config_t adConv0_ConvConfig0 = {
+	  .clockDivide = ADC_CLK_DIVIDE_8,
+	  .sampleTime = 255U,
+	  .resolution = ADC_RESOLUTION_12BIT,
+	  .inputClock = ADC_CLK_ALT_1,
+	  .trigger = ADC_TRIGGER_SOFTWARE,
+	  .pretriggerSel = ADC_PRETRIGGER_SEL_PDB,
+	  .triggerSel = ADC_TRIGGER_SEL_PDB,
+	  .dmaEnable = false,
+	  .voltageRef = ADC_VOLTAGEREF_VREF,
+	  .continuousConvEnable = false,
+	};
+
+	// const adc_converter_config_t adConv0_ConvConfig1 = adConv0_ConvConfig0;
+
+
+
+
+
+	/* Get ADC max value from the resolution */
+	if (adConv0_ConvConfig0.resolution == ADC_RESOLUTION_8BIT)
+		adcMax = (uint16_t) (1 << 8);
+	else if (adConv0_ConvConfig0.resolution == ADC_RESOLUTION_10BIT)
+		adcMax = (uint16_t) (1 << 10);
+	else
+		adcMax = (uint16_t) (1 << 12);
+
+
+	/* Configure the ADC converter
+	 * 	-	See ADC component for the configuration details
+	 */
+	ADC_DRV_ConfigConverter(ADC_INSTANCE0, &adConv0_ConvConfig0);
+	ADC_DRV_ConfigConverter(ADC_INSTANCE1, &adConv0_ConvConfig1);
+
+	adConv0_ChnConfig0.channel = ADC_CHN0;
+	adConv0_ChnConfig1.channel 	= ADC_CHN1;
+
+	/* Infinite loop:
+	 * 	- Trigger a new conversion
+	 * 	- Wait and get the result
+	 * 	- Make the value more user friendly
+	 */
+
+	int8_t i = 0;
+	float average_aux0 = 0;
+	float average_aux1 = 0;
+
+	float voltage_average_aux = 0;
+	float current_average_aux = 0;
+
+	while (1)
+	{
+		/* Configure ADC channel and software trigger a conversion */
+		ADC_DRV_ConfigChan(ADC_INSTANCE0, 0U, &adConv0_ChnConfig0);
+		/* Wait for the conversion to be done */
+		ADC_DRV_WaitConvDone(ADC_INSTANCE0);
+		/* Store the channel result into a local variable */
+		ADC_DRV_GetChanResult(ADC_INSTANCE0, 0U, &currentRawValue);
+
+		/* Configure ADC channel and software trigger a conversion */
+		ADC_DRV_ConfigChan(ADC_INSTANCE1, 0U, &adConv0_ChnConfig1);
+		/* Wait for the conversion to be done */
+		ADC_DRV_WaitConvDone(ADC_INSTANCE1);
+		/* Store the channel result into a local variable */
+		ADC_DRV_GetChanResult(ADC_INSTANCE1, 0U, &voltageRawValue);
+
+
+// NOT NEEDED ANYMORE
+
+		/* Process the result to get the value in volts */
+//		adcValue0 = ((float) currentRawValue / adcMax) * (ADC_VREFH - ADC_VREFL);
+//		adcValue1 = ((float) voltageRawValue / adcMax) * (ADC_VREFH - ADC_VREFL);
+
+		currentValue = currentRawValue*current_pol[0] + current_pol[1];
+		voltageValue = voltageRawValue*voltage_pol[0] + voltage_pol[1];
+
+
+
+
+		i++;
+
+		if (i<10)
+		{
+			average_aux0 = average_aux0 + (float)currentRawValue;
+			average_aux1 = average_aux1 + (float)voltageRawValue;
+
+			current_average_aux = current_average_aux + currentValue;
+		    voltage_average_aux = voltage_average_aux + voltageValue;
+
+
+		} else{
+			adcAverage0 = average_aux0/(i-1);
+			average_aux0 = 0;
+
+			adcAverage1 = average_aux1/(i-1);
+			average_aux1 = 0;
+
+			currentAverage = current_average_aux/(i-1);
+			current_average_aux = 0;
+
+			voltageAverage = voltage_average_aux/(i-1);
+			voltage_average_aux = 0;
+
+			i = 0;
+		}
+
+		/* Do nothing for a number of cycles */
+		delayCycles(0x7FFFFF);
+
+
+
+	}
+	/*** Don't write any code pass this line, or it will be deleted during code generation. ***/
+  /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
+  #ifdef PEX_RTOS_START
+    PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
+  #endif
+  /*** End of RTOS startup code.  ***/
+  /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
+  for(;;) {
+    if(exit_code != 0) {
+      break;
+    }
+  }
+  return exit_code;
+  /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
+} /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
+
+/* END main */
+/*!
+ ** @}
+ */
+/*
+ ** ###################################################################
+ **
+ **     This file was created by Processor Expert 10.1 [05.21]
+ **     for the Freescale S32K series of microcontrollers.
+ **
+ ** ###################################################################
+ */
