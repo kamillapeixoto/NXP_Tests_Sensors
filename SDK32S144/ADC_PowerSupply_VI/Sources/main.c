@@ -48,7 +48,7 @@ volatile int exit_code = 0;
 	#define ADC_INSTANCE0 	0UL
 	#define ADC_INSTANCE1 	1UL
 	#define ADC_CHN0		0U
-	#define ADC_CHN1		3U
+	#define ADC_CHN1		2U
 	#define ADC_VREFH  		3.3f
 	#define ADC_VREFL  		0.0f
 #else
@@ -243,7 +243,7 @@ int main(void)
 		}
 
 		/* Do nothing for a number of cycles */
-		delayCycles(0x7FFFFF);
+		//delayCycles(0x7F);
 
 
 

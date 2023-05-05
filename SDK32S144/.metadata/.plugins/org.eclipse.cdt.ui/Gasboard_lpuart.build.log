@@ -1,4 +1,4 @@
-11:16:32 **** Incremental Build of configuration Debug_FLASH for project Gasboard_lpuart ****
+14:51:28 **** Incremental Build of configuration Debug_FLASH for project Gasboard_lpuart ****
 make -j8 all 
 Executing target #24 Gasboard_lpuart.siz
 Invoking: Standard S32DS Print Size
@@ -8,5 +8,5 @@ arm-none-eabi-size --format=berkeley  Gasboard_lpuart.elf
 Finished building: Gasboard_lpuart.siz
  
 
-11:16:32 Build Finished (took 574ms)
+14:51:28 Build Finished (took 436ms)
 

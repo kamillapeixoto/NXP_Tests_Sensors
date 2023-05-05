@@ -1,0 +1,30 @@
+11:02:47 **** Build of configuration Debug_RAM for project lpi2c_master_s32k144 ****
+make -j8 all 
+Building file: ../Generated_Code/pin_mux.c
+Building file: ../Sources/main.c
+Executing target #6 ../Generated_Code/pin_mux.c
+Executing target #22 ../Sources/main.c
+Invoking: Standard S32DS C Compiler
+arm-none-eabi-gcc "@Generated_Code/pin_mux.args" -MMD -MP -MF"Generated_Code/pin_mux.d" -MT"Generated_Code/pin_mux.o" -c -o "Generated_Code/pin_mux.o" "../Generated_Code/pin_mux.c"
+Invoking: Standard S32DS C Compiler
+arm-none-eabi-gcc "@Sources/main.args" -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+Finished building: ../Generated_Code/pin_mux.c
+Finished building: ../Sources/main.c
+ 
+ 
+Building target: lpi2c_master_s32k144.elf
+Executing target #23 lpi2c_master_s32k144.elf
+Invoking: Standard S32DS C Linker
+arm-none-eabi-gcc -o "lpi2c_master_s32k144.elf" "@lpi2c_master_s32k144.args"   
+Finished building target: lpi2c_master_s32k144.elf
+ 
+Executing target #24 lpi2c_master_s32k144.siz
+Invoking: Standard S32DS Print Size
+arm-none-eabi-size --format=berkeley  lpi2c_master_s32k144.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11332	   2304	   2144	  15780	   3da4	lpi2c_master_s32k144.elf
+Finished building: lpi2c_master_s32k144.siz
+ 
+
+11:02:50 Build Finished (took 2s.326ms)
+

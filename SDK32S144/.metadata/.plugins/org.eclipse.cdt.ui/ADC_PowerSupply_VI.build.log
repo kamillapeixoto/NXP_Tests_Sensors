@@ -1,28 +1,12 @@
-09:52:56 **** Incremental Build of configuration Debug_FLASH for project ADC_PowerSupply_VI ****
+16:00:45 **** Incremental Build of configuration Debug_FLASH for project ADC_PowerSupply_VI ****
 make -j8 all 
-Building file: ../Sources/main.c
-Executing target #25 ../Sources/main.c
-Invoking: Standard S32DS C Compiler
-arm-none-eabi-gcc "@Sources/main.args" -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
-../Sources/main.c: In function 'main':
-../Sources/main.c:96:11: warning: variable 'adcMax' set but not used [-Wunused-but-set-variable]
-  uint16_t adcMax;
-           ^
-Finished building: ../Sources/main.c
- 
-Building target: ADC_PowerSupply_VI.elf
-Executing target #26 ADC_PowerSupply_VI.elf
-Invoking: Standard S32DS C Linker
-arm-none-eabi-gcc -o "ADC_PowerSupply_VI.elf" "@ADC_PowerSupply_VI.args"   
-Finished building target: ADC_PowerSupply_VI.elf
- 
 Executing target #27 ADC_PowerSupply_VI.siz
 Invoking: Standard S32DS Print Size
 arm-none-eabi-size --format=berkeley  ADC_PowerSupply_VI.elf 
    text	   data	    bss	    dec	    hex	filename
-   6176	   2332	   3192	  11700	   2db4	ADC_PowerSupply_VI.elf
+   6148	   2332	   3192	  11672	   2d98	ADC_PowerSupply_VI.elf
 Finished building: ADC_PowerSupply_VI.siz
  
 
-09:52:57 Build Finished (took 1s.318ms)
+16:00:46 Build Finished (took 442ms)
 

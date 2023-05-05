@@ -57,21 +57,21 @@
       <File Name="SDK/platform/drivers/src/lpuart/lpuart_irq.c" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
       <File Name="SDK/platform/drivers/src/clock/clock_manager.c" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
       <File Name="SDK/platform/drivers/src/edma/edma_hw_access.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
-      <File Name="Generated_Code/pin_mux.c" FileDate="2023-04-27, 15:37:58" FileAge="1682602678825" FileType="45637" CompNumb="2" />
       <File Name="SDK/platform/drivers/inc/edma_driver.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
+      <File Name="Generated_Code/pin_mux.c" FileDate="2023-04-27, 15:37:58" FileAge="1682602678825" FileType="45637" CompNumb="2" />
       <File Name="SDK/platform/drivers/src/clock/S32K1xx/sim_hw_access.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
-      <File Name="SDK/platform/drivers/src/pins/pins_driver.c" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
       <File Name="Documentation/ADC_PowerSupply_VI.txt" FileDate="2023-04-27, 16:11:07" FileAge="1682604667031" FileType="3072" />
+      <File Name="SDK/platform/drivers/src/pins/pins_driver.c" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
       <File Name="SDK/platform/drivers/src/edma/edma_hw_access.c" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
       <File Name="SDK/platform/devices/S32K144/include/S32K144_features.h" FileDate="2017-08-10, 20:18:10" FileAge="1502389090000" FileType="262144" />
       <File Name="SDK/platform/drivers/src/clock/S32K1xx/pmc_hw_access.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
-      <File Name="Sources/main.c" FileDate="2023-05-03, 09:22:35" FileAge="1683098555714" FileType="128" />
+      <File Name="Sources/main.c" FileDate="2023-05-03, 09:52:55" FileAge="1683100375520" FileType="128" />
       <File Name="SDK/platform/drivers/src/adc/adc_hw_access.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
-      <File Name="SDK/platform/devices/S32K144/startup/system_S32K144.h" FileDate="2017-08-10, 20:18:10" FileAge="1502389090000" FileType="262144" />
       <File Name="Generated_Code/lpuart1.h" FileDate="2023-04-27, 15:37:58" FileAge="1682602678842" FileType="45637" CompNumb="14" />
+      <File Name="SDK/platform/devices/S32K144/startup/system_S32K144.h" FileDate="2017-08-10, 20:18:10" FileAge="1502389090000" FileType="262144" />
       <File Name="SDK/platform/drivers/inc/interrupt_manager.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
-      <File Name="SDK/platform/devices/S32K144/startup/system_S32K144.c" FileDate="2017-08-10, 20:18:10" FileAge="1502389090000" FileType="262144" />
       <File Name="Generated_Code/lpuart1.c" FileDate="2023-04-27, 15:37:58" FileAge="1682602678834" FileType="45637" CompNumb="14" />
+      <File Name="SDK/platform/devices/S32K144/startup/system_S32K144.c" FileDate="2017-08-10, 20:18:10" FileAge="1502389090000" FileType="262144" />
       <File Name="SDK/platform/devices/S32K144/include/S32K144.h" FileDate="2017-08-10, 20:18:10" FileAge="1502389090000" FileType="262144" />
       <File Name="SDK/platform/drivers/src/adc/adc_driver.c" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
       <File Name="SDK/platform/drivers/src/clock/S32K1xx/scg_hw_access.h" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
@@ -84,5 +84,5 @@
       <File Name="SDK/rtos/osif/osif_baremetal.c" FileDate="2017-08-10, 20:18:12" FileAge="1502389092000" FileType="262144" />
     </GeneratedByPE>
   </GeneratedFilesList>
-  <CodeGenReference>8</CodeGenReference>
+  <CodeGenReference>9</CodeGenReference>
 </CodeGenerationInfo>
